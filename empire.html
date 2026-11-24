@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Empire français | 1914-1918</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#080b10;
+  color:#e8dfcc;
+  font-family:Georgia,serif;
+}
+header{
+  padding:25px 7%;
+  border-bottom:1px solid #b99754;
+  display:flex;justify-content:space-between;align-items:center;
+  background:#080b10;
+}
+.logo{color:#d1ae71;letter-spacing:4px;font-size:14px}
+nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:13px}
+nav a:hover{color:#d1ae71}
+.hero{
+  min-height:90vh;
+  display:flex;align-items:center;
+  padding:80px 8%;
+  background:linear-gradient(90deg,#080b10 10%,#080b1099 55%,#080b1040),
+  url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=85');
+  background-size:cover;background-position:center;
+}
+.hero-content{max-width:800px}
+.year{letter-spacing:8px;color:#c9a35e}
+h1{font-size:clamp(42px,7vw,85px);margin:30px 0}
+.subtitle{font-size:25px;color:#d1ae71;font-style:italic}
+.hero p{line-height:1.9;color:#c5c3bd;margin-top:30px;font-size:18px}
+section{padding:100px 8%}
+.label{color:#c9a35e;letter-spacing:5px;font-size:12px}
+h2{font-size:clamp(35px,5vw,60px);margin:25px 0}
+.text{max-width:850px;line-height:2;color:#bdbdbd;font-size:17px}
+.quote{
+  border-left:2px solid #c9a35e;padding:25px;
+  margin:40px 0;max-width:800px;
+  color:#d5b878;font-size:23px;font-style:italic;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;margin-top:50px;
+}
+.card{
+  border:1px solid #8b713f;
+  background:#111721;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.4s;
+}
+.card:hover{transform:translateY(-7px);border-color:#d1ae71}
+.card img{
+  width:100%;height:280px;object-fit:cover;
+  filter:grayscale(100%);
+  transition:.5s;
+}
+.card:hover img{filter:grayscale(40%);transform:scale(1.03)}
+.card-content{padding:25px}
+.card h3{color:#d1ae71;font-size:23px;margin-bottom:12px}
+.card p{color:#aaa;line-height:1.7;font-size:14px}
+.card button{
+  margin-top:20px;background:transparent;border:0;
+  color:#d1ae71;cursor:pointer;font-family:Georgia;font-size:15px;
+}
+.history{background:#10151e}
+.timeline{border-left:1px solid #c9a35e;margin-top:50px;padding-left:35px}
+.event{margin-bottom:45px;position:relative}
+.event:before{
+  content:"";width:11px;height:11px;border-radius:50%;
+  background:#c9a35e;position:absolute;left:-41px;top:7px;
+}
+.event h3{color:#d1ae71;font-size:25px;margin-bottom:12px}
+.event p{color:#aaa;line-height:1.8;max-width:750px}
+.memorial{
+  text-align:center;
+  background:linear-gradient(#080b10eF,#080b10f5),
+  url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;
+}
+.memorial p{max-width:800px;margin:auto;line-height:2;color:#bbb;font-size:18px}
+.memorial h2{color:#d1ae71}
+footer{text-align:center;padding:40px;color:#888;border-top:1px solid #333}
+.modal{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:#000e;backdrop-filter:blur(12px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal.open{display:flex}
+.modal-box{
+  background:#111721;border:1px solid #c9a35e;
+  max-width:800px;width:100%;padding:25px;
+  animation:zoom .3s;position:relative;
+}
+.modal-box img{width:100%;max-height:60vh;object-fit:contain}
+.modal-box h2{color:#d1ae71;font-size:28px}
+.modal-box p{color:#bbb;line-height:1.8}
+.close{position:absolute;right:15px;top:5px;font-size:35px;cursor:pointer;color:#d1ae71}
+.fade{opacity:0;transform:translateY(25px);transition:1s}
+.fade.visible{opacity:1;transform:translateY(0)}
+@keyframes zoom{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+@media(max-width:600px){
+ header{flex-direction:column;gap:15px}
+ nav a{margin:0 8px}
+ section{padding:75px 6%}
+ .hero{padding:60px 6%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">EMPIRE · HISTOIRE</div>
+<nav>
+<a href="#presentation">Présentation</a>
+<a href="#territoires">Territoires</a>
+<a href="#histoire">Histoire</a>
+<a href="#memoire">Mémoire</a>
+</nav>
+</header>
+
+<!-- ACCUEIL -->
+<div class="hero">
+<div class="hero-content">
+<span class="year">1890 — 1940</span>
+<h1>L'Empire français</h1>
+<div class="subtitle">Une histoire, des peuples, des territoires</div>
+<p>
+Au tournant du XXe siècle, la France possède un vaste empire colonial.
+De l'Afrique à l'Asie, des territoires aux histoires, aux langues
+et aux cultures diverses sont placés sous domination française.
+Cette histoire a marqué durablement les peuples et les sociétés.
+</p>
+</div>
+</div>
+
+<!-- PRESENTATION -->
+<section id="presentation">
+<span class="label">INTRODUCTION</span>
+<h2>Un empire sur plusieurs continents</h2>
+<p class="text">
+À la fin du XIXe siècle et au début du XXe siècle,
+l'empire colonial français s'étend sur de vastes territoires.
+La colonisation transforme profondément les sociétés :
+administration, économie, éducation et vie quotidienne.
+Elle s'accompagne aussi de rapports de pouvoir,
+d'inégalités, de contraintes et de résistances.
+</p>
+
+<div class="quote">
+« L'histoire d'un empire ne se raconte pas d'une seule voix,
+mais à travers celles de tous les peuples qui l'ont vécu. »
+</div>
+</section>
+
+<!-- TERRITOIRES -->
+<section id="territoires" class="history">
+<span class="label">LES TERRITOIRES</span>
+<h2>Un empire mondial</h2>
+<p class="text">
+L'empire français est constitué de territoires situés dans différentes
+régions du monde. Chaque territoire possède sa propre histoire,
+ses cultures et ses réalités, avant, pendant et après la colonisation.
+Clique sur les cartes pour en découvrir davantage.
+</p>
+
+<div class="cards">
+
+<div class="card" onclick="showInfo(this)">
+<img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=900&q=80" alt="Afrique">
+<div class="card-content">
+<h3>Afrique</h3>
+<p>De nombreux territoires africains sont colonisés et administrés par la France.</p>
+<button>Découvrir →</button>
+</div>
+</div>
+
+<div class="card" onclick="showInfo(this)">
+<img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=900&q=80" alt="Asie">
+<div class="card-content">
+<h3>Asie</h3>
+<p>L'Indochine française rassemble plusieurs territoires d'Asie du Sud-Est.</p>
+<button>Découvrir →</button>
+</div>
+</div>
+
+<div class="card" onclick="showInfo(this)">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Océanie">
+<div class="card-content">
+<h3>Océanie</h3>
+<p>La Nouvelle-Calédonie et d'autres territoires insulaires sont sous domination française.</p>
+<button>Découvrir →</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- HISTOIRE -->
+<section id="histoire">
+<span class="label">REPÈRES HISTORIQUES</span>
+<h2>De l'expansion à la décolonisation</h2>
+
+<div class="timeline">
+<div class="event">
+<h3>1830 — Début de la conquête de l'Algérie</h3>
+<p>La France commence la conquête de l'Algérie. La colonisation s'étend progressivement et provoque de profondes transformations, des conflits et des résistances.</p>
+</div>
+
+<div class="event">
+<h3>1880–1910 — Expansion coloniale</h3>
+<p>La France étend son empire en Afrique et en Asie. Les rivalités entre puissances européennes sont liées à la conquête et au contrôle des territoires.</p>
+</div>
+
+<div class="event">
+<h3>1914–1918 — La Première Guerre mondiale</h3>
+<p>Des soldats venant de territoires coloniaux sont mobilisés. Des populations participent également à l'effort de guerre, dans des contextes parfois marqués par la contrainte.</p>
+</div>
+
+<div class="event">
+<h3>1939–1945 — La Seconde Guerre mondiale</h3>
+<p>Les territoires de l'empire connaissent des situations différentes. La guerre contribue à accélérer les évolutions politiques et les revendications d'indépendance.</p>
+</div>
+
+<div class="event">
+<h3>1945–1962 — Décolonisation</h3>
+<p>Des mouvements indépendantistes se développent. De nombreux territoires accèdent à l'indépendance, au terme de processus variés, parfois pacifiques, parfois marqués par des guerres.</p>
+</div>
+</div>
+</section>
+
+<!-- MEMOIRE -->
+<section id="memoire" class="memorial">
+<span class="label">TRANSMETTRE</span>
+<h2>Une histoire à plusieurs voix</h2>
+<p>
+L'histoire de l'Empire français est celle de peuples, de cultures,
+de rencontres, mais aussi de domination et de luttes.
+Comprendre cette période, c'est écouter les différentes mémoires,
+reconnaître ses conséquences et apprendre à regarder le passé
+avec honnêteté.
+<br><br>
+Se souvenir, comprendre et transmettre.
+</p>
+</section>
+
+<footer>
+L'EMPIRE FRANÇAIS · HISTOIRE & MÉMOIRE
+</footer>
+
+<!-- FENETRE IMAGE -->
+<div class="modal" id="modal" onclick="closeInfo()">
+<div class="modal-box" onclick="event.stopPropagation()">
+<span class="close" onclick="closeInfo()">×</span>
+<img id="modalImg" src="" alt="">
+<h2 id="modalTitle"></h2>
+<p id="modalText"></p>
+</div>
+</div>
+
+<script>
+function showInfo(card){
+const img=card.querySelector("img");
+const title=card.querySelector("h3");
+const text=card.querySelector("p");
+document.getElementById("modalImg").src=img.src;
+document.getElementById("modalTitle").textContent=title.textContent;
+document.getElementById("modalText").textContent=text.textContent;
+document.getElementById("modal").classList.add("open");
+}
+function closeInfo(){
+document.getElementById("modal").classList.remove("open");
+}
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape")closeInfo();
+});
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("visible");
+observer.unobserve(e.target);
+}
+});
+},{threshold:.1});
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
